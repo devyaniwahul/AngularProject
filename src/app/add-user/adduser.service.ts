@@ -17,7 +17,6 @@ export class AdduserService {
      addUsers( username: string,
         firstname: string,
         lastname: string,
-        joindate: string,
         phoneno: string,
         email: string ,
         password: string){
@@ -26,7 +25,6 @@ export class AdduserService {
             username: username,
             firstname: firstname,
             lastname:  lastname,
-            joindate: joindate,
             phoneno:   phoneno,
             email:    email,
             password: password

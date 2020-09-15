@@ -25,7 +25,6 @@ export class AddProductService {
         quantity: string,
         ratings: string,
         image: any,
-        categoryid: string    
         ){
         
         const body = new FormData()
@@ -37,7 +36,6 @@ export class AddProductService {
         body.append('quantity',quantity)
         body.append('ratings',ratings)
         body.append('image',image)
-        body.append('categoryid',categoryid)
 
         return this.http.post(this.url, body)
     } //end of addservive

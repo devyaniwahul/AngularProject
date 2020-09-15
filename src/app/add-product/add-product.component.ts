@@ -9,7 +9,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
-export class AddProductComponent {//implements OnInit {
+export class AddProductComponent {
 
     //public selectedFile;
     imgURL: any;
@@ -40,7 +40,7 @@ export class AddProductComponent {//implements OnInit {
     {
         
         this.service.addService(this.name,this.price, this.discount, this.priceWithDiscount, this.description,this.quantity,
-        this.ratings,this.image,this.categoryid
+        this.ratings,this.image
         ).subscribe((response)=>{
                 if(response['status']=='success')
                 {
@@ -55,23 +55,7 @@ export class AddProductComponent {//implements OnInit {
     }
 
 
-/*
-    ngOnInit() {
-        this.loadCategories()
-     }
 
-     loadCategories(){
-         this.catservice.getCategories().subscribe(response =>{
-             if(response['status']=='success')
-             {
-                 this.cat = response['data']
-                
-                 if(this.cat.length > 0)
-                   this.categoryid = this.cat[0].id
-             }
-         })
-     }
-*/
      onSelectImage(event)
      {
          this.image = event.target.files[0]

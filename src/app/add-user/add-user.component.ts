@@ -12,7 +12,6 @@ export class AddUserComponent implements OnInit {
   username: string
   firstname: string
   lastname: string
-  joindate: string
   phoneno: string
   email: string 
   password: string
@@ -29,7 +28,7 @@ export class AddUserComponent implements OnInit {
   }
   onadd()
   {
-      this.service.addUsers(this.username,this.firstname,this.lastname,this.joindate,
+      this.service.addUsers(this.username,this.firstname,this.lastname,
           this.phoneno,this.email,this.password).subscribe((response)=>{
               if(response['status']=='success')
               {
