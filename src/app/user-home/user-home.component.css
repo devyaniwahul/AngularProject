@@ -1,0 +1,27 @@
+
+
+.boxed {
+    
+    font-family: 'Courier New', Courier, monospace;
+
+ } 
+ .carousel .item {
+  height: 500px;
+}
+
+.item img {
+  
+  height: 500px;
+}
+/* 
+.col-md-4{
+ 
+  background-color: gainsboro;
+}  */
+
+
+
+/* 
+h4{
+  background-color: aqua;
+} */

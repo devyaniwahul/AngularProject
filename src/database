@@ -1,0 +1,16 @@
+create table products(id int not null auto_increment primary key, name varchar(20), price int, discount int, 
+priceWithDiscount int, description varchar(250), quantity int, image varchar(250), ratings varchar(10));
+ 
+ 
+ 
+ create table mrs(id int not null auto_increment primery key,username varchar(20),
+ firstname varchar(30), lastname varchar(30), phoneno int, email varchar(50), password varchar(20), exist boolean);
+
+ create table orderdetails(id int not null AUTO_INCREMENT PRIMARY key,Quantity int,totalDiscount int,totalAmount int,name varchar(20),
+ phoneno int,PaymentMode varchar (50), OrderDate date,deliveryDate date,addressOFUser varchar(250),mrid int, productID int, flag boolean ,
+ FOREIGN key(mrid) REFERENCES mrs(id), FOREIGN key (productID) REFERENCES products(id))
+ 
+ 
+ create table locationofuser (id int not null AUTO_INCREMENT PRIMARY key,fullname varchar(50),phoneno int,state varchar(20),city varchar(10)
+ ,pincode int,address varchar(250),mrid int , FOREIGN key (mrid) REFERENCES mrs(id))
+ 

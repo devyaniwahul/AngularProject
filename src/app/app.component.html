@@ -1,0 +1,81 @@
+
+<div class="myclass">
+
+  <nav id="myid" class="navbar navbar-dark bg-primary navbar-fixed-top" style="background-color: lightgreen; ;height: 60px;">
+
+  
+   <form id="page" class="form-inline">
+ 
+       <ul class="nav navbar-nav">
+           <li ><a class="hello" routerLink="MRlogin/home" href="">Home</a></li>
+           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a routerLink="" href="#">Plants</a></li>
+               <li><a routerLink="" href="#">Fruits</a></li>
+               <li><a routerLink="" href="#">Flowers</a></li>
+             </ul>
+           </li>
+ 
+           
+           <li (click)="onLogin()" *ngIf="!isLoggedIn"><a routerLink="/MRlogin" class="hello" href="#">Login & Signup</a></li>
+           
+           <li *ngIf="isLoggedIn" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{username}}<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a  href="#1">Profile</a></li>
+               <li><a routerLink="/MRlogin/orders" href="#2">Orders</a></li>
+               <li><a (click)="onLogout()" >Logout</a></li>
+             </ul>
+           </li>
+ 
+           
+           <li ><a routerLink="/MRlogin/cart" class="hello" > Cart</a></li>
+           <li ><a routerLink="/login" class="hello" href="#">Admin</a></li>
+         </ul>
+      
+     
+   <div> <a style="margin-left: 50px;margin-top:3px;font-size: 30px" class="navbar-brand">Botanic-Heaven</a> </div> 
+ 
+ 
+   </form>                                                            
+ 
+   
+ </nav>   
+  
+ 
+ <router-outlet></router-outlet>  
+ 
+ 
+ 
+ 
+       
+ <div class="row">
+               <div class="col-md-12">
+                
+ <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+ 
+ 
+ <div class="container">
+     <hr>
+         <div class="text-center center-block">
+             <p class="txt-railway">- Contact us -</p>
+             <br />
+                 <a href=""><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+               <a href=""><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+               <a href="devyaniwahul1720@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+ </div>
+     <hr>
+ </div>
+ 
+ <br /> 
+ 
+ </div>
+  
+               
+            </div>
+ 
+ </div>
+ 
+ 
+ 
+ 
