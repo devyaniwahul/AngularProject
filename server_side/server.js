@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
+//const routerCategory = require('./category')
+const routeSearch = require('./Search')
 const routerProduct = require('./product')
 const routerUsers = require('./user')
 const routerMR = require('./MRlogin')
@@ -21,6 +23,7 @@ app.use(bodyParser.json())
 app.use('/login/dashboard/product',routerProduct)
 app.use('/login/dashboard/user',routerUsers)
 app.use('/MRlogin',routerMR)
+app.use('/MRlogin',routeSearch)
 app.use('/MRlogin',routeCartAndOrders)
 app.use(express.static('images'))
 

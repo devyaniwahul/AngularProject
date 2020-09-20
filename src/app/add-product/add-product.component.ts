@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from './add-product.service';
-import {FormGroup, FormControl, Validators} from '@angular/forms'
 
 
 @Component({
@@ -9,7 +8,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
-export class AddProductComponent {
+export class AddProductComponent {//implements OnInit{
 
     //public selectedFile;
     imgURL: any;
@@ -39,8 +38,8 @@ export class AddProductComponent {
     addProduct()
     {
         
-        this.service.addService(this.name,this.price, this.discount, this.priceWithDiscount, this.description,this.quantity,
-        this.ratings,this.image
+        this.service.addService(this.name,this.price, this.discount, this.priceWithDiscount, this.description,this.quantity, 
+            this.ratings,this.image
         ).subscribe((response)=>{
                 if(response['status']=='success')
                 {
@@ -54,8 +53,10 @@ export class AddProductComponent {
             })
     }
 
+    ngOnInit() {
+     }
 
-
+     
      onSelectImage(event)
      {
          this.image = event.target.files[0]

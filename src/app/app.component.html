@@ -1,7 +1,7 @@
 
 <div class="myclass">
 
-  <nav id="myid" class="navbar navbar-dark bg-primary navbar-fixed-top" style="background-color: lightgreen; ;height: 60px;">
+  <nav id="myid" class="navbar navbar-dark bg-primary navbar-fixed-top" style="background-color: green; ;height: 60px;">
 
   
    <form id="page" class="form-inline">
@@ -10,9 +10,9 @@
            <li ><a class="hello" routerLink="MRlogin/home" href="">Home</a></li>
            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
              <ul class="dropdown-menu">
-               <li><a routerLink="" href="#">Plants</a></li>
-               <li><a routerLink="" href="#">Fruits</a></li>
-               <li><a routerLink="" href="#">Flowers</a></li>
+               <li><a routerLink="" href="#">plants</a></li>
+               <li><a routerLink="" href="#">fruits&flowers</a></li>
+               <li><a routerLink="" href="#">gardeningequipment</a></li>
              </ul>
            </li>
  
@@ -34,7 +34,8 @@
       
      
    <div> <a style="margin-left: 50px;margin-top:3px;font-size: 30px" class="navbar-brand">Botanic-Heaven</a> </div> 
- 
+   <input [(ngModel)]="search" name="search" size="30" style="margin-top: 11px;margin-left: 150px" class="form-control mr-sm-2" type="search" placeholder="Search for product" aria-label="search" >
+   <button (click)="onSearch()" style="margin-top: 11px" class="btn btn-info" type="submit">  <a href="MRlogin/search"> Search </a> </button>
  
    </form>                                                            
  

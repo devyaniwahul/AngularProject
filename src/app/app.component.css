@@ -1,5 +1,5 @@
 .navbar-brand{
-    color:white;
+    color:black;
 
 }
 
@@ -14,13 +14,13 @@
 
 
 a:hover{
-    color:black;
+    color:orangered;
 }
 
 
 .myclass{
 
-      background-color: #6ef3d6;  
+      background-color: #c6fce5;  
      /* background-color:whitesmoke;  */
      font-weight: bold;
      font-size: 18px ;
@@ -61,4 +61,8 @@ a:hover{
 }
 #social-em:hover {
     color: #f39c12;
+}
+hr{
+    height: 1px;
+    background-color: #ccc;
 }

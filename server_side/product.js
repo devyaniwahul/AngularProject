@@ -35,6 +35,7 @@ router.delete('/:id', (request, response) => {
     const {id} = request.params
     const connection = db.connect1()
     const statement = `delete from products where id = ${id}`
+    
     connection.query(statement, (error, data) => {
         connection.end()
         response.send(utils.createResult(error, data))

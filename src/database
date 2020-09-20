@@ -4,7 +4,7 @@ priceWithDiscount int, description varchar(250), quantity int, image varchar(250
  
  
  create table mrs(id int not null auto_increment primery key,username varchar(20),
- firstname varchar(30), lastname varchar(30), phoneno int, email varchar(50), password varchar(20), exist boolean);
+ firstname varchar(30), lastname varchar(30), phoneno int(11), email varchar(50), password varchar(20), exist boolean);
 
  create table orderdetails(id int not null AUTO_INCREMENT PRIMARY key,Quantity int,totalDiscount int,totalAmount int,name varchar(20),
  phoneno int,PaymentMode varchar (50), OrderDate date,deliveryDate date,addressOFUser varchar(250),mrid int, productID int, flag boolean ,

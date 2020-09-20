@@ -9,7 +9,6 @@ export class AddProductService {
 
   http: HttpClient
     url = 'http://localhost:4000/login/dashboard/product'   //express port 4000
-    url1 = 'http://localhost:4000/category' 
 
     constructor(httpClient: HttpClient, private http1:HttpClient) {
         this.http = httpClient
@@ -25,6 +24,7 @@ export class AddProductService {
         quantity: string,
         ratings: string,
         image: any,
+
         ){
         
         const body = new FormData()
@@ -39,9 +39,5 @@ export class AddProductService {
 
         return this.http.post(this.url, body)
     } //end of addservive
-        
-    getCategories()
-    {
-        return this.http1.get(this.url1)
-    }
+ 
 }

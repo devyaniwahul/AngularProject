@@ -39,6 +39,9 @@ import { UserOrderListService } from './user-order-list/User-Order-List.service'
 import { AllOrderListService } from './all-order-list/all-order-list.service';
 import { ProductService } from './product-list/product.service';
 
+import { SearchProductComponent } from './search-product/search-product.component';
+import { SearchproductService } from './search-product/searchproduct.service';
+
 
 const routes: Route[] = [
 
@@ -65,11 +68,13 @@ const routes: Route[] = [
  {path: 'MRlogin/cart', component: CartComponent},
  {path: 'MRregister', component: MRRegisterComponent},
  {path: 'MRlogin/cartEdit/:id', component: CartProductDetailsComponent},
+ {path: 'MRlogin/search', component: SearchProductComponent},
+
  {path: 'MRlogin/cart/placeorder', component: UserOrdersComponent},
  {path: 'MRlogin/orders', component: UserOrderListComponent},
  {path: 'MRlogin/dashboard/orders', component: AllOrderListComponent},
- {path: 'MRlogin/dashboard/MRorders/:id', component: UserOrderListComponent}
-
+ {path: 'MRlogin/dashboard/MRorders/:id', component: UserOrderListComponent},
+ 
 
 
 ]
@@ -94,6 +99,8 @@ const routes: Route[] = [
     UserOrdersComponent,
     UserOrderListComponent,
     AllOrderListComponent,
+    
+    SearchProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,6 +127,9 @@ UserHomeService,
 UserOrdersService ,
 UserOrderListService,
         AllOrderListService,
+        
+        SearchproductService,
+        
     
   ],
   bootstrap: [AppComponent]

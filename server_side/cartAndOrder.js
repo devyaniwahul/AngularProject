@@ -62,20 +62,20 @@ router.post('/cartDelete', (request, response) => {
     })
 })
 
-//to update orderlist (called when user is confired to order)
+//to update orderlist 
 router.put('/cart/confirmorder', (request, response) => {
-    const {OrderDate,deliveryDate,PaymentMode,mrid,name,addressOFUser,phoneno} = request.body
+    const {OrderDate,deliveryDate,PaymentMode,mrid,prname,addressOFUser,phoneno} = request.body
    
     const connection = db.connect1()
     const statement = `
-    update orderdetails set OrderDate = '${OrderDate}', deliveryDate =  '${deliveryDate}', PaymentMode = '${PaymentMode}', name = '${name}', addressOFUser = '${addressOFUser}', phoneno = '${phoneno}',flag = 1 where mrid = ${mrid} and flag = 0`
+    update orderdetails set OrderDate = '${OrderDate}', deliveryDate =  '${deliveryDate}', PaymentMode = '${PaymentMode}', prname = '${prname}', addressOFUser = '${addressOFUser}', phoneno = '${phoneno}',flag = 1 where mrid = ${mrid} and flag = 0`
     connection.query(statement, (error, data) => {
         connection.end()
         response.send(utils.createResult(error, data))
     })
 })
 
-//to insert address in locationofuser table (called when user is confired to order)
+//to insert address in locationofuser table 
 router.post('/cart/confirmorder', (request, response) => {
     const {fullname,phoneno,state,city,pincode,address,mrid} = request.body
    
@@ -100,12 +100,12 @@ router.get('/cart/confirmorder', (request, response) => {
     })
 })
 
-//to get list of orders of a MR
+//to get list of orders of a user
 router.post('/orders', (request, response) => {
     const {mrid} = request.body
     const connection = db.connect1()
     const statement = `
-    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.name,o.phoneno,o.PaymentMode,
+    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.prname,o.phoneno,o.PaymentMode,
     o.OrderDate,o.deliveryDate,o.addressOFUser from orderdetails o inner join products p where o.ProductID = p.id and o.mrid = ${mrid} and flag = 1 order by o.deliveryDate desc`
     
     connection.query(statement, (error, data) => {
@@ -126,11 +126,11 @@ router.delete('/orders/:id', (request, response) => {
 })
 
 
-//to get list of orders of All mrs
+//to get list of orders of All users
 router.get('/dashboard/orders', (request, response) => {
     const connection = db.connect1()
     const statement = `
-    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.name,o.phoneno,o.PaymentMode,
+    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.prname,o.phoneno,o.PaymentMode,
     o.OrderDate,o.deliveryDate,addressOFUser,o.mrid from orderdetails o inner join products p where o.ProductID = p.id and flag = 1 order by o.deliveryDate desc`
     
     connection.query(statement, (error, data) => {
@@ -140,12 +140,12 @@ router.get('/dashboard/orders', (request, response) => {
 })
 
 
-// to get list of orders of a mr in admin side
+// to get list of orders of a users in admin side
 router.get('/dashboard/MRorders/:id', (request, response) => {
     const {id} = request.params
     const connection = db.connect1()
     const statement = `
-    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.name,o.phoneno,o.PaymentMode,
+    select p.image,p.name, o.id,o.Quantity,o.totalDiscount,o.totalAmount,o.prname,o.phoneno,o.PaymentMode,
     o.OrderDate,o.deliveryDate,addressOFUser,o.mrid from orderdetails o inner join products p where o.ProductID = p.id and o.mrid=${id} and flag = 1 order by o.deliveryDate desc`
     
     connection.query(statement, (error, data) => {

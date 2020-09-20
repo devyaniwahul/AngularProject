@@ -14,11 +14,11 @@ export class ProductListComponent {
 
 
     constructor(private router: Router,
-        Productservice: ProductService,
+        productservice: ProductService,
        private service : ProductService) {
 
             
-            Productservice.getproduct().subscribe((response)=>{
+            productservice.getproduct().subscribe((response)=>{
                 if(response['status']=='success')
                 {
                     this.products = response['data']         

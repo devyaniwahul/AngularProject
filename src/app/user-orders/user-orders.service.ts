@@ -23,7 +23,7 @@ export class UserOrdersService {
         deliveryDate:String,
         PaymentMode: number,
         mrid:number,
-        name:String,
+        prname:String,
         addressOFUser:String,
         phoneno:String
 
@@ -36,7 +36,7 @@ export class UserOrdersService {
             deliveryDate:deliveryDate,
             PaymentMode:PaymentMode,
             mrid:mrid,
-            name:name,
+            prname:prname,
             addressOFUser:addressOFUser,
             phoneno:phoneno
             

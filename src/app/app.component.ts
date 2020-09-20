@@ -54,4 +54,12 @@ export class AppComponent implements CanActivate {
   }
 
   
+  onSearch()
+  {
+    localStorage['searchValue'] = this.search
+
+    this.router.navigate(['/MRlogin/search'])
+  }
+
 }
+

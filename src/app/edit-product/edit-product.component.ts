@@ -9,7 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
 
-  
+  //cat = []
+  categoryid = 0
   name = ''
   price = 0
   discount = 0
@@ -49,17 +50,16 @@ export class EditProductComponent implements OnInit {
             }
          }
 
-    ngOnInit() {
-     }
-
-
-
-   
-
-
+         ngOnInit() {
+         
+         }
+    
+    
+    
+       
     onUpdate() {
         this.service
-          .edit_Product(this.name, this.price, this.discount, this.priceWithDiscount ,this.quantity,this.description, this.id)
+          .edit_Product(this.name, this.price, this.discount, this.priceWithDiscount ,this.quantity,this.description, this.categoryid,this.id)
           .subscribe(response => {
             if (response['status'] == 'success') {
                 alert('product-updated')

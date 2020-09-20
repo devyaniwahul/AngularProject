@@ -19,6 +19,8 @@ export class EditproductService {
       priceWithDiscount: number,
       quantity: Date,
       description: String,
+      categoryid: number,
+
       id: number
   )
   {
@@ -29,6 +31,8 @@ export class EditproductService {
           priceWithDiscount:priceWithDiscount,
           quantity:quantity,
           description:description,
+          categoryid:categoryid,
+
           id:id
       }
 
@@ -42,5 +46,6 @@ export class EditproductService {
       return this.http.get(this.url + '/' + id)
   }
 
+ 
   
 }

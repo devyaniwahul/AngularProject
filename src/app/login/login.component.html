@@ -2,7 +2,8 @@
 <br><br><br>
 <button (click)= "dashboard()" class="btn btn-default" style="margin-top: 10px;">Dashboard</button>
 
-
+<h1>List of MRs</h1>
+<button (click)= "onAdduser()" class="btn btn-primary">Add Users</button> <br><br>
 <table class="table table-striped table-bordered">
 
 <thead>
@@ -33,7 +34,6 @@
         <button (click)="onUserSelect(user.id)" class = "btn btn-warning" style="margin-left: 10px;"><i class="glyphicon glyphicon-pencil"></i></button>
         <button (click)="onOrderList(user.id)" class = "btn btn-info" style="margin-top: 10px;margin-left: 10px;"> 
         <a href="/MRlogin/dashboard/MRorders/{{user.id}}"> ShowOrders </a> </button>
-        <button  class = "btn btn-info" style="margin-top: 10px;">Track Location </button>
     </td>
     </tr>
 

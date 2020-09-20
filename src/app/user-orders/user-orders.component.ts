@@ -65,7 +65,7 @@ export class UserOrdersComponent implements OnInit {
                   const mrid = localStorage['id']
 
                   const addressOFUser = this.address +', ' + this.city +', ' + this.state +', ' + this.pincode
-                  const name = this.fullname
+                  const prname = this.fullname
                   const phoneno = this.phoneno
 
                   this.service1.InsertLocation(this.fullname,this.phoneno,this.state,this.city,this.pincode,this.address,mrid)
@@ -80,7 +80,7 @@ export class UserOrdersComponent implements OnInit {
 
                 
 
-                  this.service.UpdateOrders(this.OrderDate,this.deliveryDate,this.PaymentMode,mrid,name,addressOFUser,phoneno)
+                  this.service.UpdateOrders(this.OrderDate,this.deliveryDate,this.PaymentMode,mrid,prname,addressOFUser,phoneno)
                   .subscribe((response)=>{
                           if(response['status']=='success')
                           {
